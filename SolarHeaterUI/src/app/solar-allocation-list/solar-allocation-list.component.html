@@ -5,8 +5,7 @@
             <div class="panel-heading">Solar Heater Bookings</div>
             <div class="panel-body">
                 <label>Please select Heater Id below:</label>
-                <select class="form-control" (change)="displaySelected()" [(ngModel)]="selectedId">
-                    <option></option>
+                <select class="form-control" (change)="displaySelected()" [(ngModel)]="selectedId" placeholder="">
                     <option *ngFor="let id of solarHeaterIds" value="{{id}}">
                         {{id}}
                     </option>
@@ -21,7 +20,7 @@
                             <th>Installation Date</th>
                         </tr>
                         <tr>
-                            <td>{{selectedId}}</td>
+                            <td>{{selectedSolar.customerId}}</td>
                             <td>{{selectedSolar.distributorName}}</td>
                             <td>{{selectedSolar.purchaseDate | date:'fullDate'}}</td>
                             <td>{{selectedSolar.installationDate | daysCount}}</td>
